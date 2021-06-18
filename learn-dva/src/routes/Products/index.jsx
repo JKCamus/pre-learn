@@ -17,4 +17,4 @@ const Products = ({ dispatch, products }) => {
   );
 };
 // export default memo(Products);
-export default connect(({ products }) => ({ products }))(Products);
+export default connect(({ products }) => ({ products }))(memo(Products));
