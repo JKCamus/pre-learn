@@ -18,6 +18,8 @@ function IndexPage() {
           </a>
         </li>
         <NavLink to="products">to products</NavLink>
+        <hr />
+        <NavLink to='demo'>to demo</NavLink>
       </ul>
     </div>
   );
