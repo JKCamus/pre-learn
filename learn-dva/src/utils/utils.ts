@@ -4,7 +4,7 @@
  * @Author: camus
  * @Date: 2021-06-18 14:32:35
  * @LastEditors: camus
- * @LastEditTime: 2021-06-18 14:41:17
+ * @LastEditTime: 2021-06-19 10:36:28
  */
 import { useEffect, useRef } from "react";
 export const useInterval = function (
@@ -23,3 +23,7 @@ export const useInterval = function (
     return () => clearInterval(id);
   }, [delay]);
 };
+
+
+
+
