@@ -18,6 +18,7 @@ function toChinese(value: NoYes) {
   }
 }
 console.log(toChinese(NoYes.No));//否
+console.log(toChinese(NoYes.No));//否
 console.log(NoYes.No);//0
 console.log(NoYes[0]);//No
 
