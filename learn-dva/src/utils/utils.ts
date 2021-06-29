@@ -6,7 +6,7 @@
  * @LastEditors: camus
  * @LastEditTime: 2021-06-19 10:36:28
  */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
 export const useInterval = function (
   callback: () => void,
   delay: number | null
@@ -24,6 +24,14 @@ export const useInterval = function (
   }, [delay]);
 };
 
+export const useDebounce = <V>(value: V, delay?: number) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const timeout = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timeout);
+  }, [value, delay]);
+  return debouncedValue;
+};
 
 
 
