@@ -32,6 +32,18 @@ export const useDebounce = <V>(value: V, delay?: number) => {
   }, [value, delay]);
   return debouncedValue;
 };
-
-
-
+/**
+ * @description: update 生命周期
+ * @param {*} effect
+ * @param {*} deps
+ */
+export const useUpdateEffect: typeof useEffect = (effect, deps) => {
+  const isMounted = useRef(false);
+  useEffect(() => {
+    if (!isMounted.current) {
+      isMounted.current = true;
+    } else {
+      return effect();
+    }
+  }, deps);
+};
