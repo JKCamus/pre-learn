@@ -4,7 +4,7 @@
  * @Author: camus
  * @Date: 2021-06-18 14:32:35
  * @LastEditors: camus
- * @LastEditTime: 2021-06-19 10:36:28
+ * @LastEditTime: 2021-07-01 20:04:04
  */
 import { useEffect, useRef,useState } from "react";
 export const useInterval = function (
@@ -46,4 +46,16 @@ export const useUpdateEffect: typeof useEffect = (effect, deps) => {
       return effect();
     }
   }, deps);
+};
+// 模拟mounted生命周期
+
+export const useMountedRef = () => {
+  const mountedRef = useRef(false);
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  });
+  return mountedRef;
 };
